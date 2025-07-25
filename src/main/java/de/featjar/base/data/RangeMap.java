@@ -103,11 +103,11 @@ public class RangeMap<T> implements Cloneable {
         return indexToObject.size() == 1 ? Result.empty() : Result.of(Range.of(1, indexToObject.size() - 1));
     }
 
-    protected Result<Integer> getMinimumIndex() {
+    public Result<Integer> getMinimumIndex() {
         return getValidIndexRange().map(Range::getLowerBound);
     }
 
-    protected Result<Integer> getMaximumIndex() {
+    public Result<Integer> getMaximumIndex() {
         return getValidIndexRange().map(Range::getUpperBound);
     }
 
